@@ -62,8 +62,8 @@ def pie_chart(launch_site):
                      names=spacex_df.groupby('Launch Site')['Launch Site'].first(),
                      title='Total Success Launches by Site')
     else:
-        fig = px.pie(values=spacex_df[spacex_df['Launch Site'] == launch_site]['class'].value_counts(normalize=True), 
-                     names=spacex_df['class'].unique(), 
+        fig = px.pie(values=spacex_df[spacex_df['Launch Site'] == launch_site]['class'].value_counts(), 
+                     names= ["Success","Failure"],
                      title= f'Total Success Launches for Site {launch_site}')
     return(fig)
 
